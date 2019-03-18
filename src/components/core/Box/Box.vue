@@ -1,23 +1,14 @@
-<template>
+<template functional>
     <div class="box">
         <div class="box--container content">
-            <textarea  ref="textArea" @keyup="increaseSize()" class="box--input" :placeholder="defaultText"></textarea>
+            <slot name="content">
+            </slot>
         </div>
     </div>
 </template>
 <script>
 export default {
-    data() {
-        return {
-            defaultText: 'Write note...'
-        }
-    },
-    methods: {
-        increaseSize() {
-            this.$refs.textArea.style.height = "1px";
-            this.$refs.textArea.style.height = (this.$refs.textArea.scrollHeight)+"px";
-        }
-    }
+
 }
 </script>
 

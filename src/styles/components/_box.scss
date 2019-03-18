@@ -6,28 +6,12 @@
     justify-content: center;
 
     .box--container {
+        margin: $default-margin;
         border: $light-grey solid $default-border;
         border-radius: $default-radius;
-        width: 90%;
-        height: 25%;
-
+        width: 100%;
+        max-width: 70vw;
         box-shadow: $default-shadow;
         padding: $medium-padding $large-padding;
-
-        .box--input {
-            line-height: $default-line-height;
-            color: $grey;
-            font-weight: $bold;
-            font-family: $secondary-font;
-
-            &.__on-end-line {
-                height: 10px;
-            }
-
-            &::placeholder {
-                font-family: $secondary-font;
-                font-weight: $bold;
-            }
-        }
     }
 }

@@ -3,7 +3,7 @@
   <div id="app">
     <app-header></app-header>
     <div class="main">
-      <app-box></app-box>      
+      <app-note-input></app-note-input>
     </div>
 
   </div>
@@ -11,14 +11,14 @@
 
 <script>
 import Header from './components/core/Header/Header.vue';
-import Box from './components/core/Box/Box.vue';
+import NoteInput from './components/app/NoteInput.vue';
 
 export default {
 
   name: 'app',
   components: {
     'app-header': Header,
-    'app-box': Box
+    'app-note-input': NoteInput
   }
 }
 </script>
