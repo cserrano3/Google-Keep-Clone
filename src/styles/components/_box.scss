@@ -10,15 +10,24 @@
         border-radius: $default-radius;
         width: 90%;
         height: 25%;
-        overflow-y: auto;
+
         box-shadow: $default-shadow;
         padding: $medium-padding $large-padding;
 
-        &.content {
-            font-family: $secondary-font;
+        .box--input {
             line-height: $default-line-height;
-            font-weight: $bold;
             color: $grey;
+            font-weight: $bold;
+            font-family: $secondary-font;
+
+            &.__on-end-line {
+                height: 10px;
+            }
+
+            &::placeholder {
+                font-family: $secondary-font;
+                font-weight: $bold;
+            }
         }
     }
 }
