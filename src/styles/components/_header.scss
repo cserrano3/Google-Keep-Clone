@@ -1,0 +1,36 @@
+
+@import '../settings/exports.scss';
+.header {
+    padding: $small-padding;
+    width: 100%;
+    position: fixed;
+    background-color: $white;
+    border-bottom: $default-border solid $light-grey;
+
+    .header--container {
+        height: 3.2rem;
+        position: relative;
+        white-space: nowrap;
+
+        .header--title-wrapper {
+            display: flex;
+            flex: 1 1 auto;
+            align-items: center;
+
+            .header--icon {
+                padding: $medium-padding;
+                &.material-icons {
+                    font-size: 30px;
+                    color: $grey;
+                }
+            }
+            .header--title {
+                color:$grey;
+                line-height: 24px;
+                padding-left: $small-padding;
+                font-size: $font-size--large;
+                font-family: $primary-font;
+            }
+        }
+    }
+}

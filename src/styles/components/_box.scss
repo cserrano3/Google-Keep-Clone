@@ -1,0 +1,24 @@
+@import '../settings/exports.scss';
+@import '../mixins/exports.scss';
+.box {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+
+    .box--container {
+        border: $light-grey solid $default-border;
+        border-radius: $default-radius;
+        width: 90%;
+        height: 25%;
+        overflow-y: auto;
+        box-shadow: $default-shadow;
+        padding: $medium-padding $large-padding;
+
+        &.content {
+            font-family: $secondary-font;
+            line-height: $default-line-height;
+            font-weight: $bold;
+            color: $grey;
+        }
+    }
+}
