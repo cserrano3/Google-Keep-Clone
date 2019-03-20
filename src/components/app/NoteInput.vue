@@ -2,7 +2,7 @@
     <div class="note-input">
         <app-box class="app-box">
             <template v-slot:content>
-                <app-textarea :placeholder="'Enter some text'"></app-textarea>
+                <app-textarea v-model="value" :placeholder="'Enter some text'"></app-textarea>
             </template>
         </app-box>
     </div>
@@ -15,6 +15,11 @@ export default {
     components: {
         'app-box': Box,
         'app-textarea': TextArea
+    },
+    data() {
+        return {
+            value: ''
+        }
     }
 }
 </script>
