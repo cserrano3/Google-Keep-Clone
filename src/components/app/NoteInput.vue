@@ -2,8 +2,8 @@
     <div class="note-input">
         <app-box class="app-box">
             <template v-slot:content>
-                <app-input v-model="title" v-if="isEditing"></app-input>
-                <app-textarea v-model="value" @focus="isEditing = true" :placeholder="'Enter some text'"></app-textarea>
+                <app-input v-if="isEditing"></app-input>
+                <app-textarea v-model="value" @focus="isEditing = true" @blur="isEditing = false" :placeholder="'Enter some text'"></app-textarea>
             </template>
         </app-box>
     </div>
@@ -22,7 +22,6 @@ export default {
     data() {
         return {
             value: '',
-            title: 'Titulo',
             isEditing: false
         }
     }

@@ -7,6 +7,7 @@
         class="textarea--input"
         @input="updateValue"
         @focus="onFocus"
+        @blur="onBlur"
         :placeholder="placeholder">
     </textarea>
 </div>
@@ -31,6 +32,9 @@ export default {
         },
         onFocus() {
             this.$emit('focus');
+        },
+        onBlur() {
+            this.$emit('blur');
         }
     }
 }
