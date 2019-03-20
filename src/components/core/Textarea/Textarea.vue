@@ -6,6 +6,7 @@
         :value="value"
         class="textarea--input"
         @input="updateValue"
+        @focus="onFocus"
         :placeholder="placeholder">
     </textarea>
 </div>
@@ -27,6 +28,9 @@ export default {
         },
         updateValue(event) {
             this.$emit('input', event.target.value);
+        },
+        onFocus() {
+            this.$emit('focus');
         }
     }
 }

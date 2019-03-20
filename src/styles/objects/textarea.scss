@@ -1,12 +1,15 @@
-
 @import '../settings/exports.scss';
+
 .textarea {
     width: 100%;
+    padding: $input--padding;
+
     .textarea--input {
         line-height: $default-line-height;
         color: $grey;
         font-weight: $bold;
         font-family: $secondary-font;
+        font-size: $font-size--input;
 
         &.__on-end-line {
             height: 10px;
@@ -15,6 +18,7 @@
         &::placeholder {
             font-family: $secondary-font;
             font-weight: $bold;
+            font-size: $font-size--input;
         }
     }
 

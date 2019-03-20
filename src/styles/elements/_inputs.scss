@@ -4,3 +4,11 @@ textarea {
     resize: none;
     width: 100%;
 }
+
+input {
+    border-style: none;
+}
+
+*:focus {
+    outline: none;
+}

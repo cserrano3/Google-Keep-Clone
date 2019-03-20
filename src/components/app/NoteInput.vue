@@ -2,7 +2,8 @@
     <div class="note-input">
         <app-box class="app-box">
             <template v-slot:content>
-                <app-textarea v-model="value" :placeholder="'Enter some text'"></app-textarea>
+                <app-input v-model="title" v-if="isEditing"></app-input>
+                <app-textarea v-model="value" @focus="isEditing = true" :placeholder="'Enter some text'"></app-textarea>
             </template>
         </app-box>
     </div>
@@ -11,14 +12,18 @@
 <script>
 import Box from '../core/Box/Box.vue';
 import TextArea from '../core/Textarea/Textarea.vue';
+import Input from '../core/Input/Input.vue';
 export default {
     components: {
         'app-box': Box,
-        'app-textarea': TextArea
+        'app-textarea': TextArea,
+        'app-input': Input
     },
     data() {
         return {
-            value: ''
+            value: '',
+            title: 'Titulo',
+            isEditing: false
         }
     }
 }
