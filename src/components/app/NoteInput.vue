@@ -24,10 +24,10 @@ export default {
     mounted() {
         Buzzer.$on('reset-input', (value) => {
             this.isEditing = value;
-            console.log('this hassss content ............', this.hasContent);
             if(this.hasContent) {
-                console.log('hiiiii');
                 this.postNote({title: this.title, noteText: this.value});
+                this.title = '';
+                this.value = '';
             }
         });
     },
