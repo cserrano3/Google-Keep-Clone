@@ -2,7 +2,7 @@
     <div class="note-input" id="note-input">
         <app-box class="note-input--app-box">
             <template v-slot:content>
-                <app-input v-if="isEditing" id="input-title" class="note-input--title"></app-input>
+                <app-input v-if="isEditing" v-model="title" id="input-title" class="note-input--title"></app-input>
                 <app-textarea v-model="value" class="note-input--area" @blur="isEditing = false" :placeholder="'Enter some text'"></app-textarea>
             </template>
         </app-box>
@@ -24,12 +24,29 @@ export default {
     mounted() {
         Buzzer.$on('reset-input', (value) => {
             this.isEditing = value;
+            console.log('this hassss content ............', this.hasContent);
+            if(this.hasContent) {
+                console.log('hiiiii');
+                this.postNote({title: this.title, noteText: this.value});
+            }
         });
+    },
+    props: {
+        postNote: {
+            type: Function,
+            required: true
+        }
     },
     data() {
         return {
             value: '',
+            title: '',
             isEditing: false
+        }
+    },
+    computed: {
+        hasContent() {
+            return !this.isEditing && this.value && this.title;
         }
     }
 }

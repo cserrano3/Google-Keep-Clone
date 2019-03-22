@@ -3,23 +3,23 @@
   <div id="app" @click="resetInput">
     <app-header></app-header>
     <div class="main">
-      <app-note-input></app-note-input>
+      <keep-container></keep-container>
     </div>
 
   </div>
 </template>
 
 <script>
+import KeepContainer from './containers/KeepContainer.vue';
 import Header from './components/core/Header/Header.vue';
-import NoteInput from './components/app/NoteInput.vue';
 import Buzzer from './utils/eventBus.js';
 
 export default {
 
   name: 'app',
   components: {
-    'app-header': Header,
-    'app-note-input': NoteInput 
+    'keep-container': KeepContainer,
+    'app-header': Header
   },
   methods: {
     resetInput(event) {
