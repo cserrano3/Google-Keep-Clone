@@ -1,0 +1,23 @@
+@import '../settings/exports.scss';
+@import '../mixins/exports.scss';
+
+.button-wrapper {
+    width: 100%;
+}
+.button {
+    background-color: #fff;
+    font-family: $secondary-font;
+    font-size: $font-size--input;
+    overflow: hidden;
+    color: $dark-grey;
+    font-weight: $bold;
+    border-radius: 5px;
+
+    &:hover {
+        background-color: $lightest-grey;
+    }
+
+    &:active {
+        background-color: $light-grey;
+    }
+}

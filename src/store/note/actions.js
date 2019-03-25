@@ -5,7 +5,7 @@ import {BASE_URL, HEADERS} from '../../utils/constants.js';
 const api = new API(BASE_URL + '/notes.json', HEADERS);
 
 const actions = {
-    [POST_NOTE]: ({commit}, payload) =>{
+    [POST_NOTE]: ({commit}, payload) => {
         console.log('payload........ ', payload)
         api.performPOST(api.url, payload, api.options)
             .then((result) => {

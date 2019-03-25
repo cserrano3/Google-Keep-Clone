@@ -1,0 +1,7 @@
+@import '../settings/spacing.scss';
+button {
+    border-width: 0;
+    border-style: none;
+    padding: $medium-padding--1 $button-padding;
+    cursor: pointer;
+}

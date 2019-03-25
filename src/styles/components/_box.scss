@@ -12,5 +12,7 @@
         width: 100%;
         max-width: 85vw;
         box-shadow: $default-shadow;
+        max-height: 300px;
+        overflow: auto;
     }
 }
