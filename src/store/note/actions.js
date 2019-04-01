@@ -6,7 +6,6 @@ const api = new API(BASE_URL + '/notes.json', HEADERS);
 
 const actions = {
     [POST_NOTE]: ({commit}, payload) => {
-        console.log('payload........ ', payload)
         api.performPOST(api.url, payload, api.options)
             .then((result) => {
                 console.log(result);
@@ -16,6 +15,6 @@ const actions = {
                 commit(POST_NOTE_ERROR, error);
             });
     }
-}
+};
 
 export default actions;
