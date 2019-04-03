@@ -27,7 +27,7 @@ export default {
         }
     },
     mounted() {
-        console.log('items......... ', this.items);
+                console.log('notes ......... ', this.items);
     }
 }
 </script>

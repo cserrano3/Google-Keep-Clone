@@ -7,3 +7,5 @@ export const HEADERS = Object.freeze({
         'Access-Control-Allow-Methods': 'POST, GET, OPTIONS, PATCH'
     }
 });
+
+export const DEEP_CLONE = (obj) => JSON.parse(JSON.stringify(obj));

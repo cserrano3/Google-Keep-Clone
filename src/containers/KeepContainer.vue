@@ -9,7 +9,7 @@
 import NoteInput from '../components/app/NoteInput.vue';
 import Grid from '../components/app/Grid/Grid.vue';
 import {POST_NOTE, GET_NOTES, NOTES} from './../store/types.js';
-import {mapActions, mapGetters} from 'vuex';
+import {mapActions, mapState} from 'vuex';
 export default {
     components: {
         'app-note-input': NoteInput,
@@ -17,12 +17,7 @@ export default {
     },
     mounted() {
         this.getNotes();
-        console.log('this.niotes ........... ', this.notes);
-    },
-    data() {
-        return {
-            items: [],
-        }
+
     },
     methods: {
         ...mapActions({
@@ -31,8 +26,8 @@ export default {
         })
     },
     computed: {
-        ...mapGetters({
-            notes: NOTES
+        ...mapState({
+            notes: state => state.notes
         })
     }
 }
