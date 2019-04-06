@@ -2,14 +2,14 @@
     <div>
         <app-note-input :postNote="postNote">
         </app-note-input>
-        <app-grid :items="notes"></app-grid>
+        <app-grid :items="notes" :postNote="postNote"></app-grid>
     </div>
 </template>
 <script>
-import NoteInput from '../components/app/NoteInput.vue';
+import NoteInput from '../components/app/NoteInput/NoteInput.vue';
 import Grid from '../components/app/Grid/Grid.vue';
 import {POST_NOTE, GET_NOTES, NOTES} from './../store/types.js';
-import {mapActions, mapState} from 'vuex';
+import {mapActions, mapState, mapGetters} from 'vuex';
 export default {
     components: {
         'app-note-input': NoteInput,
@@ -17,7 +17,7 @@ export default {
     },
     mounted() {
         this.getNotes();
-
+        console.log('the notes ....... ', this.notes);
     },
     methods: {
         ...mapActions({
@@ -26,8 +26,8 @@ export default {
         })
     },
     computed: {
-        ...mapState({
-            notes: state => state.notes
+        ...mapGetters({
+           notes: NOTES
         })
     }
 }

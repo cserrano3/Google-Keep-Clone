@@ -8,7 +8,7 @@
             horizontal-order="true"
             fit-width="true">
             <div v-for="item in items" :key="item.title" class=".grid--item">
-                {{item}}
+                <app-grid-item :content="item" :postNote="postNote"></app-grid-item>
             </div>
         </div>
     </div>
@@ -16,14 +16,20 @@
 <script>
 import Vue from 'vue';
 import {VueMasonryPlugin} from 'vue-masonry';
-
+import GridItem from '../GridItem/GridItem.vue';
 Vue.use(VueMasonryPlugin);
 export default {
     name: 'app-grid',
+    components: {
+        'app-grid-item': GridItem
+    },
     props: {
         items: {
             type: Array,
 
+        },
+        postNote: {
+            type: Function
         }
     },
     mounted() {

@@ -9,6 +9,7 @@ const actions = {
     [GET_NOTES]: ({commit}, payload) => {
         api.performGET(api.url, api.options)
             .then(({data}) => {
+                console.log('data ........ ', data);
                 let notes = DEEP_CLONE(snapshotToArray(data));
                 console.log('final notes. ......... ', notes);
                 commit(GET_NOTES_SUCCESS, notes);

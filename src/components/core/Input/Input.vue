@@ -5,6 +5,7 @@
 				:value="value"
 				@input="updateValue"
 				class="input--field"
+				:class="customClass"
 				:placeholder="placeholder"
 			/>
 	</div>
@@ -17,6 +18,9 @@ export default {
 			default: 'Title'
 		},
 		value: {
+			type: String
+		},
+		customClass: {
 			type: String
 		}
 	},

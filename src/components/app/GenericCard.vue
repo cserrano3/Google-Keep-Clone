@@ -1,10 +1,10 @@
 <template>
-    <div class="note-input" id="note-input">
-        <app-box class="note-input--app-box">
+    <div>
+        <app-box :class="componentStyle">
             <template v-slot:content>
-                <app-input v-if="isEditing" v-model="title" id="input-title" class="note-input--title"></app-input>
-                <app-textarea v-model="value" class="note-input--area" @blur="isEditing = false" :placeholder="'Enter some text'"></app-textarea>
-                <div class="note-input--button-wrapper">
+                <app-input v-if="isEditing" v-model="title"></app-input>
+                <app-textarea v-model="value" @blur="isEditing = false" :placeholder="'Enter some text'"></app-textarea>
+                <div class="generic-card--button-wrapper">
                     <app-button :label="'Close'" :onClick="close" v-if="isEditing"></app-button>
                 </div>
             </template>
@@ -20,26 +20,28 @@ import Buzzer from '../../utils/eventBus.js';
 import Button from '../core/Button/Button.vue';
 
 export default {
+    abstract: false,
     components: {
         'app-box': Box,
         'app-textarea': TextArea,
         'app-input': Input,
         'app-button': Button
     },
-    mounted() {
-        Buzzer.$on('reset-input', (value) => {
-            this.isEditing = value;
-            if(this.hasContent) {
-                this.postNote({title: this.title, noteText: this.value});
-                this.title = '';
-                this.value = '';
-            }
-        });
-    },
     props: {
         postNote: {
             type: Function,
             required: true
+        },
+        content: {
+            type: Object
+        },
+        classStyle: {
+            type: String
+        }
+    },
+    methods: {
+        close() {
+            this.isEditing = false;
         }
     },
     data() {
@@ -49,23 +51,18 @@ export default {
             isEditing: false
         }
     },
-    methods: {
-        close() {
-            this.isEditing = false;
-        }
-    },
     computed: {
         hasContent() {
             return !this.isEditing && this.value && this.title;
+        },
+        componentStyle() {
+            return this.classStyle;
         }
     }
 }
 </script>
 <style>
-    .note-input--app-box {
-        width: 100vw;
-    }
-    .note-input--button-wrapper {
+    .generic-card--button-wrapper {
         margin: 5px;
         display: flex;
         justify-content: flex-end;

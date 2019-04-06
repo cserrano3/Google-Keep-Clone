@@ -5,6 +5,7 @@
         @keyup="increaseSize()"
         :value="value"
         class="textarea--input"
+        :class="customClass"
         @input="updateValue"
         :placeholder="placeholder">
     </textarea>
@@ -18,6 +19,9 @@ export default {
         },
         value: {
             type: String,
+        },
+        customClass: {
+            type:String
         }
     },
     methods: {

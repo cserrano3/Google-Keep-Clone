@@ -23,11 +23,10 @@ export default {
   },
   methods: {
     resetInput(event) {
-        if(event.target.classList.contains('textarea') ||
-          event.target.classList.contains('textarea--input') || //TODO: For the love of god, improve this selection, it's O(2n) chances of error
-          event.target.classList.contains('input--field') ||
-          event.target.classList.contains('box--container')) {
-           Buzzer.$emit('reset-input', true);
+      console.log('event ............ ', event.target);
+        if(event.target.classList.contains('note-input--area')
+          || event.target.classList.contains('note-input--title')) {
+          Buzzer.$emit('reset-input', true);
         } else {
           Buzzer.$emit('reset-input', false);
         }
