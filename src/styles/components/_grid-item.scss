@@ -1,0 +1,22 @@
+@import '../settings/colors.scss';
+@import '../settings/spacing.scss';
+@import '../settings/types.scss';
+
+.grid-item {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+
+    .grid-item--container {
+        border: $light-grey solid $default-border;
+        border-radius: $default-radius;
+        margin: 5px 0;
+        font-family: $primary-font;
+        color: $darkest-grey;
+        font-size: $font-size--input;
+        font-weight: $light-bold;
+        overflow: auto;
+        padding: $medium-padding $large-padding;
+    }
+
+}

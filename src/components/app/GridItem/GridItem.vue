@@ -1,9 +1,9 @@
 <template>
     <div class="grid-item">
-        <app-box :class="componentStyle">
+        <app-box :styleComponent="boxStyle">
             <template v-slot:content>
-                <app-input v-if="isEditing" v-model="title" id="input-title" class="note-input--title"></app-input>
-                <app-textarea v-model="value" class="note-input--area" :placeholder="'Enter some text'"></app-textarea>
+               
+                {{content}}
                 <div class="note-input--button-wrapper">
                     <app-button :label="'Close'" :onClick="close" v-if="isEditing"></app-button>
                 </div>
@@ -15,17 +15,26 @@
 import GenericCard from '../GenericCard.vue';
 export default {
     extends: GenericCard,
+    props: {
+        content: {
+            type: Object
+        }
+    },
     data() {
         return {
             title: this.content.note.title,
             value: this.content.note.noteText
         };
+    },
+    computed: {
+        boxStyle() {
+            return {
+                component: 'grid-item--container',
+                container: ''
+            }
+        }
     }
 }
 </script>
 <style>
-    .grid-item {
-        padding: 10px;
-        margin: 10px;
-    }
 </style>

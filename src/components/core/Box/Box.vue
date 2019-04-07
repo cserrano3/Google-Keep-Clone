@@ -1,6 +1,6 @@
 <template functional>
-    <div class="box">
-        <div class="box--container content">
+    <div :class="props.styleComponent.component">
+        <div :class="props.styleComponent.container">
             <slot name="content">
             </slot>
         </div>
@@ -8,7 +8,12 @@
 </template>
 <script>
 export default {
-    name: 'app-box'
+    name: 'app-box',
+    props: {
+        styleComponent: {
+            type: Object
+        }
+    }
 }
 </script>
 

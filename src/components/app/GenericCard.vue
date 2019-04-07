@@ -35,9 +35,6 @@ export default {
         content: {
             type: Object
         },
-        classStyle: {
-            type: String
-        }
     },
     methods: {
         close() {
@@ -53,11 +50,8 @@ export default {
     },
     computed: {
         hasContent() {
-            return !this.isEditing && this.value && this.title;
+            return (!this.isEditing && this.value !== '' && this.title !== '');
         },
-        componentStyle() {
-            return this.classStyle;
-        }
     }
 }
 </script>

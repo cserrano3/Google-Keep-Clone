@@ -17,7 +17,6 @@ export default {
     },
     mounted() {
         this.getNotes();
-        console.log('the notes ....... ', this.notes);
     },
     methods: {
         ...mapActions({

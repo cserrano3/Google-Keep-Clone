@@ -1,11 +1,11 @@
 <template>
     <div class="note-input" id="note-input">
-        <app-box :class="componentStyle">
+        <app-box :styleComponent="boxStyle">
             <template v-slot:content>
-                <app-input v-if="isEditing" v-model="title" id="input-title" :customClass="noteInputClass"></app-input>
+                <app-input v-if="isEditing" v-model="title" :customClass="noteInputClass"></app-input>
                 <app-textarea v-model="value" :customClass="noteTextClass" @blur="isEditing = false" :placeholder="'Enter some text'"></app-textarea>
                 <div class="note-input--button-wrapper">
-                    <app-button :label="'Close'" :onClick="close" v-if="isEditing"></app-button>
+                    <app-button :label="label" :onClick="close" v-if="isEditing"></app-button>
                 </div>
             </template>
         </app-box>
@@ -45,13 +45,18 @@ export default {
         },
         noteInputClass() {
             return 'note-input--title';
+        },
+        boxStyle() {
+            return {
+                component: 'box',
+                container: 'box--container'
+            };
+        },
+        label(){
+            return 'Close';
         }
     }
 }
 </script>
 <style>
-    .grid-item {
-        padding: 10px;
-        margin: 10px;
-    }
 </style>

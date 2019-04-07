@@ -1,0 +1,14 @@
+.note-input {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+
+    .box {
+        width: 85vw;
+    }
+
+    .note-input--button-wrapper {
+        display: flex;
+        justify-content: flex-end;
+    }
+}
