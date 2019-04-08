@@ -28,10 +28,6 @@ export default {
         'app-button': Button
     },
     props: {
-        postNote: {
-            type: Function,
-            required: true
-        },
         content: {
             type: Object
         },

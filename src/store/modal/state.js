@@ -1,6 +1,7 @@
 const state = {
     isOpen: false,
-    note: {}
+    note: {},
+    error: {}
 };
 
 export default state;

@@ -23,6 +23,7 @@ export default {
                 this.postNote({title: this.title, noteText: this.value});
                 this.title = '';
                 this.value = '';
+                this.updateGrid();
             }
         });
     },
@@ -30,7 +31,14 @@ export default {
         content: {
             type: Object,
             default: null
+        },
+        postNote: {
+            type: Function
+        },
+        updateGrid: {
+            type: Function
         }
+
     },
     data() {
         return {

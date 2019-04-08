@@ -8,6 +8,7 @@
                 :content="item"
                 :postNote="postNote"
                 :key="item.title"
+                @click.native="openModal(item)"
                >
             </app-grid-item>
 
@@ -30,6 +31,9 @@ export default {
 
         },
         postNote: {
+            type: Function
+        },
+        openModal: {
             type: Function
         }
     },

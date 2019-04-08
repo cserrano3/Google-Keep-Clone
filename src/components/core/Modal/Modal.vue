@@ -1,5 +1,5 @@
 <template>
-    <div class="modal--backdrop">
+    <div class="modal--backdrop" v-if="isOpen">
         <div class="modal--edit-note">
 
         </div>
@@ -10,6 +10,10 @@ export default {
     props: {
         item: {
             type: Object
+        },
+        isOpen: {
+            type: Boolean,
+            default: false
         }
     }
 }
