@@ -12,7 +12,7 @@
     </div>
 </template>
 <script>
-import GenericCard from '../GenericCard.vue';
+import GenericCard from '../GenericCard/GenericCard.vue';
 import Buzzer from '../../../utils/eventBus.js';
 export default {
     extends: GenericCard,

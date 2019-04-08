@@ -2,8 +2,12 @@
     <div class="grid-item">
         <app-box :styleComponent="boxStyle">
             <template v-slot:content>
-               
-                {{content}}
+                <div class="grid-item--title">
+                   <label>{{content.note.title}}</label>
+                </div>
+                <div class="grid-item--note">
+                    {{content.note.noteText}}
+                </div>
                 <div class="note-input--button-wrapper">
                     <app-button :label="'Close'" :onClick="close" v-if="isEditing"></app-button>
                 </div>
@@ -12,7 +16,7 @@
     </div>
 </template>
 <script>
-import GenericCard from '../GenericCard.vue';
+import GenericCard from '../GenericCard/GenericCard.vue';
 export default {
     extends: GenericCard,
     props: {

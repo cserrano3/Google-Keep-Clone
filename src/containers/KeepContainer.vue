@@ -3,19 +3,25 @@
         <app-note-input :postNote="postNote">
         </app-note-input>
         <app-grid :items="notes" :postNote="postNote"></app-grid>
+        <app-modal></app-modal>
     </div>
 </template>
 <script>
 import NoteInput from '../components/app/NoteInput/NoteInput.vue';
 import Grid from '../components/app/Grid/Grid.vue';
+import Modal from '../components/core/Modal/Modal.vue';
 import {POST_NOTE, GET_NOTES, NOTES} from './../store/types.js';
 import {mapActions, mapState, mapGetters} from 'vuex';
 export default {
     components: {
         'app-note-input': NoteInput,
-        'app-grid': Grid
+        'app-grid': Grid,
+        'app-modal': Modal
     },
     mounted() {
+        this.getNotes();
+    },
+    updated() {
         this.getNotes();
     },
     methods: {

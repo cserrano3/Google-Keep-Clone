@@ -13,11 +13,11 @@
 
 </template>
 <script>
-import Box from '../core/Box/Box.vue';
-import TextArea from '../core/Textarea/Textarea.vue';
-import Input from '../core/Input/Input.vue';
-import Buzzer from '../../utils/eventBus.js';
-import Button from '../core/Button/Button.vue';
+import Box from '../../core/Box/Box.vue';
+import TextArea from '../../core/Textarea/Textarea.vue';
+import Input from '../../core/Input/Input.vue';
+import Buzzer from '../../../utils/eventBus.js';
+import Button from '../../core/Button/Button.vue';
 
 export default {
     abstract: false,

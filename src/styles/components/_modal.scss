@@ -1,0 +1,23 @@
+@import '../settings/exports.scss';
+@import '../mixins/exports.scss';
+
+.modal--backdrop {
+    background-color: $backdrop;
+    position: fixed;
+    z-index: 100;
+    left: 0;
+    top: -80px;
+    right: 0;
+    bottom: 0;
+}
+
+.modal--edit-note {
+    position: relative;
+    width: 480px;
+    max-width: 100%;
+    margin: 25vh auto 0;
+    background-color: $white;
+    padding: $medium-padding;
+    border-radius: $default-radius;
+    box-shadow: $item-shadow;
+}

@@ -1,7 +1,7 @@
 <template>
     <div class="grid">
         <masonry
-          :cols="{default: 3, 400: 1}"
+          :cols="{default: 3, 420: 1}"
           :gutter="10">
             <app-grid-item
                 v-for="item in items"

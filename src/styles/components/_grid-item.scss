@@ -1,7 +1,9 @@
 @import '../settings/colors.scss';
 @import '../settings/spacing.scss';
 @import '../settings/types.scss';
-
+@import '../mixins/effects.scss';
+@import '../mixins/functions.scss';
+@import '../settings/breakpoints.scss';
 .grid-item {
     width: 100%;
     display: flex;
@@ -16,7 +18,25 @@
         font-size: $font-size--input;
         font-weight: $light-bold;
         overflow: auto;
-        padding: $medium-padding $large-padding;
-    }
+        @include calc(width, '100vw - 100px');
+        
+        @media #{$desktops} {
+            @include calc(width, '100vw / 5');
+        }
 
+        &:hover {
+            box-shadow: $item-shadow;
+            transition: $item-shadow-transition;
+        }
+
+        .grid-item--title {
+            font-size: $font-size--medium;
+            font-weight: $bold;
+            padding: $medium-padding $large-padding 0;
+        }
+
+        .grid-item--note {
+            padding:  $medium-padding $large-padding;
+        }
+    }
 }
