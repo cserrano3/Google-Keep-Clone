@@ -20,9 +20,6 @@ import VueMasonry from 'vue-masonry-css';
 import GridItem from '../GridItem/GridItem.vue';
 Vue.use(VueMasonry);
 export default {
-    mounted() {
-        console.log('here are the props........ ', this.$props);
-    },
     name: 'app-grid',
     components: {
         'app-grid-item': GridItem

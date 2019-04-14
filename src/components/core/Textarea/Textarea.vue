@@ -4,7 +4,6 @@
         ref="textArea"
         @keyup="increaseSize()"
         :value="value"
-        :style="customStyle"
         class="textarea--input"
         :class="customClass"
         @input="updateValue"
@@ -14,6 +13,7 @@
 </template>
 <script>
 export default {
+    abstract: false,
     props: {
         placeholder: {
             type: String
@@ -25,19 +25,7 @@ export default {
             type:String
         },
     },
-    data() {
-        return {
-            customStyle: 0
-        }
-    },
-    mounted() {
-        this.increaseOnLoad();
-    },
     methods: {
-        increaseOnLoad() {
-            this.customStyle = (this.$refs.textArea.scrollHeight) + 'px';
-            this.$refs.textArea.style.height += this.customStyle;
-        },
         increaseSize() {
             this.$refs.textArea.style.height = "1px";
             this.$refs.textArea.style.height = (this.$refs.textArea.scrollHeight)+"px";

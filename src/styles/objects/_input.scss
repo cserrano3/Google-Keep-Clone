@@ -5,20 +5,7 @@
 
 	&__with-title {
 		padding: $input--padding;
-	}
-}
-
-input {
-
-	font-family: $secondary-font;
-	font-weight: $bold;
-	color: $grey;
-	font-size: $font-size--medium;
-
-	&::placeholder{
 		font-family: $secondary-font;
-		font-weight: $bold;
-		color: $grey;
-		font-size: $font-size--medium;
 	}
+
 }

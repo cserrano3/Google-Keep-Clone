@@ -10,7 +10,6 @@ const actions = {
         api.performGET(api.url, api.options)
             .then(({data}) => {
                 let notes = DEEP_CLONE(snapshotToArray(data));
-                console.log('final notes. ......... ', notes);
                 commit(GET_NOTES_SUCCESS, notes);
             }).catch((error) => {
                 console.error(error);

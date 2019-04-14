@@ -17,9 +17,17 @@
     max-width: 100%;
     margin: 25vh auto 0;
     background-color: $white;
-    padding: $medium-padding;
     border-radius: $default-radius;
     box-shadow: $item-shadow;
+
+    .modal--title {
+        font-size: $font-size--large;
+        font-family: $primary-font;
+        color: $dark-grey;
+    }
+    .input__with-title {
+        padding:  $large-padding 15px 0;
+    }
 
     .textarea--input {
         overflow: hidden;
@@ -30,5 +38,6 @@
     .modal--button-wrapper {
         display: flex;
         justify-content: flex-end;
+        padding: $small-padding;
     }
 }

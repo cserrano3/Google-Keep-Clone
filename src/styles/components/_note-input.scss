@@ -1,3 +1,5 @@
+@import '../settings/exports.scss';
+
 .note-input {
     width: 100%;
     display: flex;
@@ -5,6 +7,11 @@
 
     .box {
         width: 85vw;
+    }
+
+    .note-input--title {
+        font-family: $secondary-font;
+        font-weight: $bold;
     }
 
     .note-input--button-wrapper {

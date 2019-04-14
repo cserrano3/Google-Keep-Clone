@@ -1,16 +1,13 @@
 @import '../settings/exports.scss';
-
-.textarea {
+.modal-textarea {
     width: 100%;
     padding: $input--padding;
 
-    .textarea--input {
-        line-height: $default-line-height;
-        color: $grey;
-        font-weight: $bold;
-        font-family: $secondary-font;
+    .modal-textarea--input {
+        font-family: $primary-font;
+        color: $darkest-grey;
         font-size: $font-size--input;
-
+        font-weight: $light-bold;
 
         &::placeholder {
             font-family: $secondary-font;
@@ -18,5 +15,4 @@
             font-size: $font-size--input;
         }
     }
-
 }
