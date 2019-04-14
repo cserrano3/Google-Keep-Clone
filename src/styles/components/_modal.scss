@@ -11,7 +11,7 @@
     bottom: 0;
 }
 
-.modal--edit-note {
+.modal--container {
     position: relative;
     width: 480px;
     max-width: 100%;
@@ -20,4 +20,15 @@
     padding: $medium-padding;
     border-radius: $default-radius;
     box-shadow: $item-shadow;
+
+    .textarea--input {
+        overflow: hidden;
+        height: max-content;
+        max-height: 30vw;
+    }
+
+    .modal--button-wrapper {
+        display: flex;
+        justify-content: flex-end;
+    }
 }

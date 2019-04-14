@@ -1,5 +1,5 @@
 <template>
-    <div class="grid-item">
+    <div class="grid-item" @click="openModal(content)">
         <app-box :styleComponent="boxStyle">
             <template v-slot:content>
                 <div class="grid-item--title">
@@ -21,7 +21,13 @@ export default {
     extends: GenericCard,
     props: {
         content: {
-            type: Object
+            type: Object,
+            default: {},
+            required: true
+        },
+        openModal: {
+            type: Function,
+            required: true
         }
     },
     data() {

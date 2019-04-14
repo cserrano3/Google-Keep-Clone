@@ -8,10 +8,19 @@ const actions = {
     [OPEN_MODAL]: ({commit}, payload) => {
         api.performGET(`${api.url}/${payload.id}.json`, HEADERS)
             .then(({data}) => {
-                let note = DEEP_CLONE(data);
-                commit(OPEN_MODAL_SUCCESS, note);
+                const note = DEEP_CLONE(data);
+                const modalPayload = {
+                    note,
+                    isOpen: true
+                };
+                commit(OPEN_MODAL_SUCCESS, modalPayload);
             }).catch((error) => {
-                commit(OPEN_MODAL_ERROR, error);
+                const err = DEEP_CLONE(error);
+                const errorPayload = {
+                    error: err,
+                    isOpened: false
+                };
+                commit(OPEN_MODAL_ERROR, errorPayload);
                 console.error(error);
             });
     }

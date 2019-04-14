@@ -3,6 +3,7 @@
 .textarea {
     width: 100%;
     padding: $input--padding;
+    height: 100%;
 
     .textarea--input {
         line-height: $default-line-height;
@@ -10,10 +11,8 @@
         font-weight: $bold;
         font-family: $secondary-font;
         font-size: $font-size--input;
+        height: auto;
 
-        &.__on-end-line {
-            height: 10px;
-        }
 
         &::placeholder {
             font-family: $secondary-font;

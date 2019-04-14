@@ -19,9 +19,13 @@
         font-weight: $light-bold;
         overflow: auto;
         @include calc(width, '100vw - 100px');
-        
+
         @media #{$desktops} {
             @include calc(width, '100vw / 5');
+        }
+
+        @media #{$small-desktops} {
+            @include calc(width, '100vw / 4');
         }
 
         &:hover {

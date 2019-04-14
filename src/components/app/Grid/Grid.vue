@@ -6,9 +6,8 @@
             <app-grid-item
                 v-for="item in items"
                 :content="item"
-                :postNote="postNote"
                 :key="item.title"
-                @click.native="openModal(item)"
+                :openModal="openModal"
                >
             </app-grid-item>
 
@@ -21,6 +20,9 @@ import VueMasonry from 'vue-masonry-css';
 import GridItem from '../GridItem/GridItem.vue';
 Vue.use(VueMasonry);
 export default {
+    mounted() {
+        console.log('here are the props........ ', this.$props);
+    },
     name: 'app-grid',
     components: {
         'app-grid-item': GridItem
@@ -28,10 +30,6 @@ export default {
     props: {
         items: {
             type: Array,
-
-        },
-        postNote: {
-            type: Function
         },
         openModal: {
             type: Function

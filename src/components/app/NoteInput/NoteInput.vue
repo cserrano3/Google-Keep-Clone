@@ -30,7 +30,7 @@ export default {
     props: {
         content: {
             type: Object,
-            default: null
+            default: () => {{}}
         },
         postNote: {
             type: Function
