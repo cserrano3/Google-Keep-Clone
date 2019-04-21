@@ -1,12 +1,9 @@
-import { OPEN_MODAL, OPEN_MODAL_SUCCESS, OPEN_MODAL_ERROR } from '../types.js';
-import API from '../../utils/api.js';
-import {BASE_URL, HEADERS, DEEP_CLONE} from '../../utils/constants.js';
-
-const api = new API(`${BASE_URL}/notes`, HEADERS);
+import { OPEN_MODAL, OPEN_MODAL_SUCCESS, OPEN_MODAL_ERROR, GET_NOTE } from '../types.js';
+import {DEEP_CLONE} from '../../utils/constants.js';
 
 const actions = {
-    [OPEN_MODAL]: ({commit}, payload) => {
-        api.performGET(`${api.url}/${payload.id}.json`, HEADERS)
+    [OPEN_MODAL]: ({dispatch, commit}, payload) => {
+        return dispatch(GET_NOTE, payload)
             .then(({data}) => {
                 const note = DEEP_CLONE(data);
                 const modalPayload = {

@@ -9,6 +9,9 @@ export const POST_NOTE_SUCCESS = 'note/POST_NOTE_SUCCESS';
 export const EDIT_NOTE = 'note/EDIT_NOTE';
 export const EDIT_NOTE_SUCCESS = 'note/EDIT_NOTE_SUCCESS';
 export const EDIT_NOTE_ERROR = 'note/EDIT_NOTE_ERROR';
+export const GET_NOTE = 'note/GET_NOTE';
+export const GET_NOTE_SUCCESS = 'note/GET_NOTE_SUCCESS';
+export const GET_NOTE_ERROR = 'note/GET_NOTE_ERROR';
 
 export const OPEN_MODAL = 'modal/OPEN_MODAL';
 export const OPEN_MODAL_SUCCESS = 'modal/OPEN_MODAL_SUCCESS';

@@ -3,7 +3,6 @@ const state = {
         title: '',
         noteText: ''
     },
-    success: '',
     error: {}
 }
 

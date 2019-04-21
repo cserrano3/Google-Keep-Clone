@@ -30,6 +30,9 @@ export default {
             required: true
         }
     },
+    mounted() {
+        console.log('content..... ', this.content);
+    },
     data() {
         return {
             title: this.content.note.title,

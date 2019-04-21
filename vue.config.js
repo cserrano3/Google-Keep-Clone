@@ -5,6 +5,9 @@ module.exports = {
         data: `
           @import "@/styles/index.scss";
         `
+      },
+      css: {
+        data: `@import "@styles/vendors/animate.css";`
       }
     }
   }

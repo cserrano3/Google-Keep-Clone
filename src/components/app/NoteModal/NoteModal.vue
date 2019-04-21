@@ -1,5 +1,7 @@
 <template>
+        <transition name="fade">
     <div class="modal--backdrop" v-if="isOpen">
+
         <div class="modal--container">
             <app-input v-if="isEditing" :customClass="modalTitleClass" :value="item.title" v-model="item.title"></app-input>
             <app-textarea ref="damn" customStyle="{height: sizeHeight}" :value="item.noteText" v-model="item.noteText"></app-textarea>
@@ -7,7 +9,9 @@
                 <app-button :label="label" :onClick="closeModal" v-if="isEditing"></app-button>
             </div>
         </div>
+
     </div>
+        </transition>
 </template>
 <script>
 import Button from '../../core/Button/Button.vue';
@@ -47,5 +51,4 @@ export default {
 }
 </script>
 <style>
-
 </style>

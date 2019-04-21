@@ -7,6 +7,9 @@
 
     .box {
         width: 85vw;
+        @media #{$small-desktops} {
+            @include calc(width, '100vw / 2');
+        }
     }
 
     .note-input--title {
